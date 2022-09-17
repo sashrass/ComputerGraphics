@@ -57,7 +57,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
         view.backgroundColor = .white
         controlsView.frame = CGRect(x: 0, y: view.bounds.height * 0.75, width: view.bounds.width, height: view.bounds.height * 0.25)
         view.addSubview(controlsView)
@@ -73,10 +73,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         NSLayoutConstraint.activate(constraints)
         
-//        controlsView.addSubview(slider)
-//        slider.leadingAnchor.constraint(equalTo: controlsView.leadingAnchor).isActive = true
-//        slider.trailingAnchor.constraint(equalTo: controlsView.trailingAnchor).isActive = true
-//        slider.bottomAnchor.constraint(equalTo: controlsView.bottomAnchor).isActive = true
         
         let scalesLabel = getLabel()
         controlsView.addSubview(scalesLabel)
@@ -96,12 +92,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         controlsView.addSubview(xLabel)
         xLabel.centerXAnchor.constraint(equalTo: xScaleValueTextField.centerXAnchor).isActive = true
         xLabel.topAnchor.constraint(equalTo: xScaleValueTextField.bottomAnchor, constant: 5).isActive = true
-        
-//        let yScaleLabel = getLabel()
-//        controlsView.addSubview(yScaleLabel)
-//        yScaleLabel.text = "Масштаб по вертикали: "
-//        yScaleLabel.leadingAnchor.constraint(equalTo: xLabel.trailingAnchor, constant: 10).isActive = true
-//        yScaleLabel.topAnchor.constraint(equalTo: controlsView.topAnchor, constant: 10).isActive = true
+    
         
         yScaleValueTextField.addTarget(self, action: #selector(scaleFieldDiDChange(sender:)), for: .editingChanged)
         controlsView.addSubview(yScaleValueTextField)
@@ -116,12 +107,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         yLabel.centerXAnchor.constraint(equalTo: yScaleValueTextField.centerXAnchor).isActive = true
         yLabel.topAnchor.constraint(equalTo: yScaleValueTextField.bottomAnchor, constant: 5).isActive = true
         
-//        let xLabelForScaleY = getLabel()
-//        xLabelForScaleY.text = "x"
-//        controlsView.addSubview(xLabelForScaleY)
-//        xLabelForScaleY.leadingAnchor.constraint(equalTo: yScaleValueTextField.trailingAnchor, constant: 5).isActive = true
-//        xLabelForScaleY.topAnchor.constraint(equalTo: controlsView.topAnchor, constant: 10).isActive = true
-        
+    
         let originsLabel = getLabel()
         controlsView.addSubview(originsLabel)
         originsLabel.text = "Левый верхний угол: "
@@ -201,10 +187,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
             gridView.originY = scaleValue
         }
         
-//        gridView.xScale = 1
-//        gridView.yScale = 1
-//        xScaleValueTextField.text = ""
-//        yScaleValueTextField.text = ""
         gridView.setNeedsDisplay()
     }
     
@@ -259,14 +241,7 @@ class GridView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-//    override func didMoveToSuperview() {
-//        super.didMoveToSuperview()
-//        self.layer.addSublayer(figureLayer)
-//        drawEmptyGraph()
-//
-//    }
-    
+        
     override func draw(_ rect: CGRect) {
             
         drawEmptyGraph()
