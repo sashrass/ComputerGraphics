@@ -1,241 +1,122 @@
 import UIKit
-import simd
 
-class ViewController: UIViewController, UITextFieldDelegate {
+class ViewController: UIViewController {
     
-    lazy var gridView: GridView = {
-        let view = GridView()
-        view.backgroundColor = UIColor(red: 229/255, green: 229/255, blue: 229/255, alpha: 1)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
-    lazy var xScaleValueTextField: UITextField = {
-        let textField = UITextField()
-        textField.delegate = self
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.backgroundColor = UIColor(red: 229/255, green: 229/255, blue: 229/255, alpha: 1)
-        return textField
-    }()
-    
-    lazy var yScaleValueTextField: UITextField = {
-        let textField = UITextField()
-        textField.delegate = self
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.backgroundColor = UIColor(red: 229/255, green: 229/255, blue: 229/255, alpha: 1)
-        return textField
-    }()
-    
-    lazy var originYTextField: UITextField = {
-        let textField = UITextField()
-        textField.delegate = self
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.backgroundColor = UIColor(red: 229/255, green: 229/255, blue: 229/255, alpha: 1)
-        return textField
-    }()
-    
-    lazy var originXTextField: UITextField = {
-        let textField = UITextField()
-        textField.delegate = self
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.backgroundColor = UIColor(red: 229/255, green: 229/255, blue: 229/255, alpha: 1)
-        return textField
-    }()
-    
-    let controlsView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .white
-        return view
-    }()
-    
-    let slider: UISlider = {
-        let slider = UISlider()
-        slider.translatesAutoresizingMaskIntoConstraints = false
-        slider.value = 0.5
-        return slider
-    }()
+    let bezierView = BezierView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         view.backgroundColor = .white
-        controlsView.frame = CGRect(x: 0, y: view.bounds.height * 0.75, width: view.bounds.width, height: view.bounds.height * 0.25)
-        view.addSubview(controlsView)
         
-        view.addSubview(gridView)
+        view.addSubview(bezierView)
+        bezierView.translatesAutoresizingMaskIntoConstraints = false
         
-        var constraints = [NSLayoutConstraint]()
+        NSLayoutConstraint.activate([
+            bezierView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            bezierView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            bezierView.topAnchor.constraint(equalTo: view.topAnchor),
+            bezierView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+                
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(gestureRecognized(sender:)))
         
-        constraints.append(gridView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor))
-        constraints.append(gridView.leadingAnchor.constraint(equalTo: view.leadingAnchor))
-        constraints.append(gridView.trailingAnchor.constraint(equalTo: view.trailingAnchor))
-        constraints.append(gridView.bottomAnchor.constraint(equalTo: controlsView.topAnchor))
-        
-        NSLayoutConstraint.activate(constraints)
-        
-        
-        let scalesLabel = getLabel()
-        controlsView.addSubview(scalesLabel)
-        scalesLabel.text = "Масштабы: "
-        scalesLabel.leadingAnchor.constraint(equalTo: controlsView.leadingAnchor, constant: 5).isActive = true
-        scalesLabel.topAnchor.constraint(equalTo: controlsView.topAnchor, constant: 2).isActive = true
-        
-        xScaleValueTextField.addTarget(self, action: #selector(scaleFieldDiDChange(sender:)), for: .editingChanged)
-        controlsView.addSubview(xScaleValueTextField)
-        xScaleValueTextField.widthAnchor.constraint(equalToConstant: 50).isActive = true
-        xScaleValueTextField.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        xScaleValueTextField.leadingAnchor.constraint(equalTo: controlsView.leadingAnchor, constant: 10).isActive = true
-        xScaleValueTextField.topAnchor.constraint(equalTo: scalesLabel.bottomAnchor, constant: 5).isActive = true
-        
-        let xLabel = getLabel()
-        xLabel.text = "x"
-        controlsView.addSubview(xLabel)
-        xLabel.centerXAnchor.constraint(equalTo: xScaleValueTextField.centerXAnchor).isActive = true
-        xLabel.topAnchor.constraint(equalTo: xScaleValueTextField.bottomAnchor, constant: 5).isActive = true
-    
-        
-        yScaleValueTextField.addTarget(self, action: #selector(scaleFieldDiDChange(sender:)), for: .editingChanged)
-        controlsView.addSubview(yScaleValueTextField)
-        yScaleValueTextField.widthAnchor.constraint(equalToConstant: 50).isActive = true
-        yScaleValueTextField.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        yScaleValueTextField.leadingAnchor.constraint(equalTo: xScaleValueTextField.trailingAnchor, constant: 10).isActive = true
-        yScaleValueTextField.topAnchor.constraint(equalTo: scalesLabel.bottomAnchor, constant: 5).isActive = true
-        
-        let yLabel = getLabel()
-        yLabel.text = "y"
-        controlsView.addSubview(yLabel)
-        yLabel.centerXAnchor.constraint(equalTo: yScaleValueTextField.centerXAnchor).isActive = true
-        yLabel.topAnchor.constraint(equalTo: yScaleValueTextField.bottomAnchor, constant: 5).isActive = true
-        
-    
-        let originsLabel = getLabel()
-        controlsView.addSubview(originsLabel)
-        originsLabel.text = "Левый верхний угол: "
-        originsLabel.trailingAnchor.constraint(equalTo: controlsView.trailingAnchor, constant: -5).isActive = true
-        originsLabel.topAnchor.constraint(equalTo: controlsView.topAnchor, constant: 2).isActive = true
-        
-        originYTextField.addTarget(self, action: #selector(originFieldDidChange(sender:)), for: .editingChanged)
-        controlsView.addSubview(originYTextField)
-        originYTextField.widthAnchor.constraint(equalToConstant: 50).isActive = true
-        originYTextField.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        originYTextField.trailingAnchor.constraint(equalTo: controlsView.trailingAnchor, constant: -10).isActive = true
-        originYTextField.topAnchor.constraint(equalTo: scalesLabel.bottomAnchor, constant: 5).isActive = true
-        
-        let yLabelForOrigins = getLabel()
-        yLabelForOrigins.text = "y"
-        controlsView.addSubview(yLabelForOrigins)
-        yLabelForOrigins.centerXAnchor.constraint(equalTo: originYTextField.centerXAnchor).isActive = true
-        yLabelForOrigins.topAnchor.constraint(equalTo: originYTextField.bottomAnchor, constant: 5).isActive = true
-        
-        originXTextField.addTarget(self, action: #selector(originFieldDidChange(sender:)), for: .editingChanged)
-        controlsView.addSubview(originXTextField)
-        originXTextField.widthAnchor.constraint(equalToConstant: 50).isActive = true
-        originXTextField.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        originXTextField.trailingAnchor.constraint(equalTo: originYTextField.leadingAnchor, constant: -10).isActive = true
-        originXTextField.topAnchor.constraint(equalTo: scalesLabel.bottomAnchor, constant: 5).isActive = true
-        
-        let xLabelForOrigins = getLabel()
-        xLabelForOrigins.text = "x"
-        controlsView.addSubview(xLabelForOrigins)
-        xLabelForOrigins.centerXAnchor.constraint(equalTo: originXTextField.centerXAnchor).isActive = true
-        xLabelForOrigins.topAnchor.constraint(equalTo: originXTextField.bottomAnchor, constant: 5).isActive = true
-        
-        
-        slider.addTarget(self, action: #selector(targetChanged), for: .valueChanged)
-        gridView.setNeedsDisplay()
-        
-        view.bringSubviewToFront(controlsView)
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        view.addGestureRecognizer(gestureRecognizer)
     }
     
-    @objc func targetChanged() {
-        gridView.xScale = 2 * slider.value
-        gridView.setNeedsDisplay()
+    var amountOfAddedPoints = 0
+    @objc func gestureRecognized(sender: UITapGestureRecognizer) {
+        guard amountOfAddedPoints < 4 else { return }
+        
+        let location = sender.location(in: view)
+        
+        let pointView = UIView()
+        pointView.frame.size.width = 5
+        pointView.frame.size.height = 5
+        pointView.center = location
+        pointView.tag = amountOfAddedPoints
+        let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(panGestureRecognized))
+        pointView.addGestureRecognizer(panGestureRecognizer)
+        
+        pointView.backgroundColor = .black
+        view.addSubview(pointView)
+        
+        switch amountOfAddedPoints {
+        case 0:
+            bezierView.point0 = location
+        case 1:
+            bezierView.point1 = location
+        case 2:
+            bezierView.point2 = location
+        case 3:
+            bezierView.point3 = location
+        default:
+            break
+        }
+        
+        amountOfAddedPoints += 1
+        
+        if amountOfAddedPoints == 4 {
+            bezierView.setNeedsDisplay()
+        }
+        
     }
+    
+    var dragStartPoint: CGPoint?
+    @objc func panGestureRecognized(gesture: UIPanGestureRecognizer) {
+        
+        guard amountOfAddedPoints == 4,
+              let pointView = gesture.view else {return}
+        
+        switch gesture.state {
+        case .began:
+            dragStartPoint = pointView.frame.origin
+        case .changed:
+            let xTranslation = gesture.translation(in: self.view).x
+            let yTranslation = gesture.translation(in: self.view).y
 
-
-    func drawGraph() {
-        
-    }
-    
-    @objc func scaleFieldDiDChange(sender: UITextField) {
-        
-        guard let replacementString = sender.text, var scaleValue = Float(replacementString) else {return}
-        
-        if scaleValue < 0 {
-            scaleValue = -scaleValue
-            sender.text = "\(scaleValue)"
-        }
-        
-        if sender == xScaleValueTextField {
-            gridView.xScale = scaleValue
-        } else {
-            gridView.yScale = scaleValue
-        }
-        
-        gridView.setNeedsDisplay()
-    }
-    
-    @objc func originFieldDidChange(sender: UITextField) {
-        guard let replacementString = sender.text, let scaleValue = Float(replacementString) else {return}
-        
-        if sender == originXTextField {
-            gridView.originX = scaleValue
-        } else {
-            gridView.originY = scaleValue
-        }
-        
-        gridView.setNeedsDisplay()
-    }
-    
-    private func getLabel() -> UILabel {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 15)
-        return label
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        view.endEditing(true)
-        return false
-    }
-    
-    @objc private func keyboardWillShow(notification: NSNotification) {
-        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
-               return
+            pointView.center.x = dragStartPoint!.x + xTranslation
+            pointView.center.y = dragStartPoint!.y + yTranslation
+            
+            switch pointView.tag {
+            case 0:
+                bezierView.point0 = pointView.center
+            case 1:
+                bezierView.point1 = pointView.center
+            case 2:
+                bezierView.point2 = pointView.center
+            case 3:
+                bezierView.point3 = pointView.center
+            default:
+                break
             }
-
-        if view.frame.origin.y == 0 {
-            view.frame.origin.y = 0 - keyboardSize.height
+            
+            bezierView.setNeedsDisplay()
+        case.ended:
+            dragStartPoint = nil
+            
+        default:
+            break
         }
     }
     
-    @objc private func keyboardWillHide(notification: NSNotification) {
-        view.frame.origin.y = 0
-    }
+
 }
 
-class GridView: UIView {
+class BezierView: UIView {
+    var point0: CGPoint = CGPoint(x: 0, y: 0)
+    var point1: CGPoint = CGPoint(x: 0, y: 0)
+    var point2: CGPoint = CGPoint(x: 0, y: 0)
+    var point3: CGPoint = CGPoint(x: 0, y: 0)
     
-    var xScale: Float = 1
-    var yScale: Float = 1
-    
-    var originX: Float = 0
-    var originY: Float = 0
-    
-    var origin = CGPoint(x: 0, y: 0)
-    
-    var isGraphDrawn = false
-    
-    private let gridCellWidthAndHeight: CGFloat = 15
-    
-    let figureLayer = CAShapeLayer()
+    private let bezierLayer = CAShapeLayer()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.layer.addSublayer(figureLayer)
+        layer.addSublayer(bezierLayer)
+        bezierLayer.fillColor = nil
+        bezierLayer.strokeColor = UIColor.black.cgColor
+        bezierLayer.lineWidth = 2
+        backgroundColor = .white
     }
     
     required init?(coder: NSCoder) {
@@ -243,160 +124,40 @@ class GridView: UIView {
     }
         
     override func draw(_ rect: CGRect) {
-            
-        drawEmptyGraph()
-        isGraphDrawn = true
+        drawPolyline()
         
-        let scaleMatrix = makeScaleMatrix(xScale: xScale, yScale: yScale)
-               
-        let topRightPoint = simd_float3(x: 3, y: 1, z: 1) * scaleMatrix
-        let bottomRightPoint = simd_float3(x: 3, y: 3, z: 1) * scaleMatrix
-        let bottomLeftPoint = simd_float3(x: 1, y: 3, z: 1) * scaleMatrix
+        let path = UIBezierPath()
         
-        let newTopLeftPoint = CGPoint(x: CGFloat(originX), y: CGFloat(originY))
-        let newBottomLeftPoint = CGPoint(x: CGFloat(originX), y: CGFloat(originY - bottomLeftPoint.y))
-        let newBottomRightPoint = CGPoint(x: CGFloat(bottomRightPoint.x + originX), y:  CGFloat(originY - bottomLeftPoint.y))
-        let newTopRightPoint = CGPoint(x: CGFloat(topRightPoint.x + originX), y: CGFloat(originY))
-        
-        drawFigure(with: [newTopLeftPoint, newBottomLeftPoint, newBottomRightPoint, newTopRightPoint])
-    }
-    
-    private func drawEmptyGraph() {
-        drawAxis(startPoint: CGPoint(x: bounds.width / 2, y: 0), endPoint: CGPoint(x: bounds.width / 2, y: bounds.height))
-        drawAxis(startPoint: CGPoint(x: 0, y: bounds.height / 2), endPoint: CGPoint(x: bounds.width, y: bounds.height / 2))
-        
-        drawGrid()
-        isGraphDrawn = true
-    }
-    
-    private func drawAxis(startPoint: CGPoint, endPoint: CGPoint) {
-        let ordinateAxis = UIBezierPath()
-        ordinateAxis.move(to: startPoint)
-        ordinateAxis.addLine(to: endPoint)
-
-        ordinateAxis.lineWidth = 1
-        ordinateAxis.stroke()
-    }
-    
-    private func drawGrid() {
-        
-        var offsetFromCenter: CGFloat = gridCellWidthAndHeight
-        var counter = 1
-        while (bounds.width / 2) + offsetFromCenter <= bounds.width {
-            drawGridLine(from: CGPoint(x: (bounds.width / 2) + offsetFromCenter, y: 0),
-                         to: CGPoint(x: (bounds.width / 2) + offsetFromCenter, y: bounds.height))
-            if !isGraphDrawn {
-                drawNumberLabel(in: CGPoint(x: (bounds.width / 2) + offsetFromCenter + 1, y: (bounds.height / 2) + 1), number: counter)
-            }
-            offsetFromCenter += 15
-            counter += 1
+        path.move(to: point0)
+        for t in stride(from: 0, to: 1, by: 0.001) {
+            let finalPoint = getPointForCubicBezier(t: t)
+            path.addLine(to: finalPoint)
         }
         
-        offsetFromCenter = gridCellWidthAndHeight
-        counter = 1
-        while (bounds.width / 2) - offsetFromCenter >= 0 {
-            drawGridLine(from: CGPoint(x: (bounds.width / 2) - offsetFromCenter, y: 0),
-                         to: CGPoint(x: (bounds.width / 2) - offsetFromCenter, y: bounds.height))
-            if !isGraphDrawn {
-                drawNumberLabel(in: CGPoint(x: (bounds.width / 2) - offsetFromCenter + 1, y: (bounds.height / 2) + 1), number: -counter)
-            }
-            offsetFromCenter += 15
-            counter += 1
-        }
-        
-        counter = 1
-        offsetFromCenter = gridCellWidthAndHeight
-        while (bounds.height / 2) - offsetFromCenter >= 0 {
-            drawGridLine(from: CGPoint(x: 0 , y: (bounds.height / 2) - offsetFromCenter),
-                         to: CGPoint(x: bounds.width , y: (bounds.height / 2) - offsetFromCenter))
-            if !isGraphDrawn {
-                drawNumberLabel(in: CGPoint(x: (bounds.width / 2) + 2, y: (bounds.height / 2) - offsetFromCenter - 10), number: counter)
-            }
-            offsetFromCenter += 15
-            counter += 1
-        }
-        
-        offsetFromCenter = gridCellWidthAndHeight
-        counter = 1
-        while (bounds.height / 2) + offsetFromCenter <= bounds.height {
-            drawGridLine(from: CGPoint(x: 0 , y: (bounds.height / 2) + offsetFromCenter),
-                         to: CGPoint(x: bounds.width , y: (bounds.height / 2) + offsetFromCenter))
-            if !isGraphDrawn {
-                drawNumberLabel(in: CGPoint(x: (bounds.width / 2) + 2, y: (bounds.height / 2) + offsetFromCenter + 1), number: -counter)
-            }
-            offsetFromCenter += 15
-            counter += 1
-        }
+        bezierLayer.path = path.cgPath
     }
     
-    private func drawGridLine(from: CGPoint, to: CGPoint) {
-        let line = UIBezierPath()
-        line.move(to: from)
-        line.addLine(to: to)
-        line.lineWidth = 0.5
-        
-        UIColor.lightGray.setStroke()
-        line.fill()
-        line.stroke(with: .normal, alpha: 0.5)
+    func drawPolyline() {
+        let path = UIBezierPath()
+        path.move(to: point0)
+        path.addLine(to: point1)
+        path.addLine(to: point2)
+        path.addLine(to: point3)
+        UIColor.gray.set()
+        path.stroke()
     }
     
-    private func drawNumberLabel(in point: CGPoint, number: Int) {
-        let numberLabel = UILabel(frame: CGRect(x: point.x, y: point.y, width: 10, height: 10))
-        numberLabel.text = String(number)
-        numberLabel.adjustsFontSizeToFitWidth = true
-        numberLabel.textColor = .systemBlue
-        addSubview(numberLabel)
-    }
-    
-    private func drawFigure(with coordinates: [CGPoint]) {
-        figureLayer.path = nil
+    func getPointForCubicBezier(t: Double) -> CGPoint {
+        var finalPoint = CGPoint()
+        finalPoint.x = pow(1 - t, 3) * point0.x +
+                           pow(1 - t, 2) * 3 * t * point1.x +
+                           (1 - t) * 3 * t * t * point2.x +
+                           t * t * t * point3.x;
+        finalPoint.y = pow(1 - t, 3) * point0.y +
+                           pow(1 - t, 2) * 3 * t * point1.y +
+                           (1 - t) * 3 * t * t * point2.y +
+                           t * t * t * point3.y;
         
-        let figurePath = UIBezierPath()
-        
-        let screenCoordinates = transformCartesianCoordinatesToScreenCoordinates(coordinates)
-        
-        figurePath.move(to: screenCoordinates[0])
-        figurePath.addLine(to: screenCoordinates[1])
-        figurePath.addLine(to: screenCoordinates[2])
-        figurePath.addLine(to: screenCoordinates[3])
-        
-        figurePath.close()
-        
-        figureLayer.path = figurePath.cgPath
-    }
-    
-    private func transformCartesianCoordinatesToScreenCoordinates(_ coordinates: [CGPoint]) -> [CGPoint] {
-        
-        var screenCoordinates = [CGPoint]()
-        
-        coordinates.forEach {
-            let x = (bounds.width / 2) + (gridCellWidthAndHeight * $0.x)
-            let y = (bounds.height / 2) - (gridCellWidthAndHeight * $0.y)
-            
-            screenCoordinates.append(CGPoint(x: x, y: y))
-        }
-        
-        return screenCoordinates
-    }
-    
-    func makeScaleMatrix(xScale: Float, yScale: Float) -> simd_float3x3 {
-        let rows = [
-            simd_float3(xScale,      0, 0),
-            simd_float3(     0, yScale, 0),
-            simd_float3(     0,      0, 1)
-        ]
-        
-        return float3x3(rows: rows)
-    }
-    
-    func makeRotationMatrix(angle: Float) -> simd_float3x3 {
-        let rows = [
-            simd_float3(cos(angle), -sin(angle), 0),
-            simd_float3(sin(angle), cos(angle), 0),
-            simd_float3(0,          0,          1)
-        ]
-        
-        return float3x3(rows: rows)
+        return finalPoint
     }
 }
-
