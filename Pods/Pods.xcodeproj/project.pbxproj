@@ -1,0 +1,652 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		01AE9B3E9B1843F9583ADB0F64270A41 /* Pods-CompGraphics_task1-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D148A7371106FDEF03CB2CAABBF32E7 /* Pods-CompGraphics_task1-dummy.m */; };
+		1931B36C40E3CD828A6588D85BB1AE68 /* PlotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D0BA271154422A63F81C13415A30B6 /* PlotView.swift */; };
+		194F2FA1483A97FA04093F52936BB25C /* Plot3D.h in Headers */ = {isa = PBXBuildFile; fileRef = 78BEBE3DA63F25144CE760254030D0E7 /* Plot3D.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		226C1F634A9C032C0F6F104503EA6677 /* PlotConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = C660FB740AD0AB7325D5BB58AB3C3B2E /* PlotConfiguration.swift */; };
+		2BE59B5D7BAD297882495B95D1E87814 /* PlotDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEE55FCE8CC7E46938BF66B7338A9F5 /* PlotDelegate.swift */; };
+		33172C25C8301F963BF1BFB6203A8CCB /* Pods-CompGraphics_task1-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B362ED0179AD07CDBFF2F92FC1ADB9A /* Pods-CompGraphics_task1-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		358C3DEE81EA184CF3798DF2C93FEE13 /* PlotDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAF5773A41CCBB72FED4DCA6837CD63 /* PlotDataSource.swift */; };
+		85F22619EC7AFF2A9BE39830B8CFAA47 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		8F636C506083763C572638031E85E11A /* PlotPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA375EC26AE92BB2B3514B412E34AA7 /* PlotPoint.swift */; };
+		A491A718C6B0F7FD3FAEC61E139CC277 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C77BD9E811DC5FA80E8DAEBD95B647 /* Extensions.swift */; };
+		BBB3B877C92A85D5A3311BC1D4AC2398 /* Plot3d-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F48F56BE82F39A0051C8ABE4A1C766CB /* Plot3d-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BD80CFAA37E3A760425BA190BE62EB8F /* Plot3d-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ACF6D8D909192DDA34EBEB536D8FBA2 /* Plot3d-dummy.m */; };
+		BE2F66C00AAFCF933475C58F5CAE567D /* PlotConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C182FED9C03A37F7A8CE95B770BED7A1 /* PlotConnection.swift */; };
+		D04868E9E7600578EF0E4C04EED3E1A9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		DA98070D408C5C101F52F08E1872D8FD /* PlotPointNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC85DE5AA4830C4A04B182CE223F4B9 /* PlotPointNode.swift */; };
+		DC2944BD84DE7F11086FE6FA58225A7C /* PlotSpaceNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287B7A60E837DC61D3D55AF41BDDB2BA /* PlotSpaceNode.swift */; };
+		ECB8A84DAE99E89EB88D585795736711 /* PlotAxis.swift in Sources */ = {isa = PBXBuildFile; fileRef = D209AC118321DBBE858317F32680F71B /* PlotAxis.swift */; };
+		FECD107BA276FB5A187B2F228E78367B /* PlotText.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20C0396ECB1E37165E8C04B135320EF /* PlotText.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3CF7104A022D1C3ED82673050F43835E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A0C26DDA545428B04B4066FD2C4E8EA4;
+			remoteInfo = Plot3d;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		05A7EE00931A20E8169A05F0AAC095C2 /* Plot3d.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Plot3d.modulemap; sourceTree = "<group>"; };
+		101BFC0985B3E8673AC0D5BD454E7CCF /* Pods-CompGraphics_task1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CompGraphics_task1.release.xcconfig"; sourceTree = "<group>"; };
+		287B7A60E837DC61D3D55AF41BDDB2BA /* PlotSpaceNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PlotSpaceNode.swift; path = Plot3D/PlotSpaceNode.swift; sourceTree = "<group>"; };
+		2CC85DE5AA4830C4A04B182CE223F4B9 /* PlotPointNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PlotPointNode.swift; path = Plot3D/PlotPointNode.swift; sourceTree = "<group>"; };
+		34331173421DED24C13147BFA4A88433 /* Pods-CompGraphics_task1-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CompGraphics_task1-Info.plist"; sourceTree = "<group>"; };
+		44D0BA271154422A63F81C13415A30B6 /* PlotView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PlotView.swift; path = Plot3D/PlotView.swift; sourceTree = "<group>"; };
+		4D148A7371106FDEF03CB2CAABBF32E7 /* Pods-CompGraphics_task1-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CompGraphics_task1-dummy.m"; sourceTree = "<group>"; };
+		4DAF5773A41CCBB72FED4DCA6837CD63 /* PlotDataSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PlotDataSource.swift; path = Plot3D/PlotDataSource.swift; sourceTree = "<group>"; };
+		4FEE55FCE8CC7E46938BF66B7338A9F5 /* PlotDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PlotDelegate.swift; path = Plot3D/PlotDelegate.swift; sourceTree = "<group>"; };
+		53F6B9BBA3EB76E9464929E8E0D5FC97 /* Pods-CompGraphics_task1.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CompGraphics_task1.modulemap"; sourceTree = "<group>"; };
+		5ACF6D8D909192DDA34EBEB536D8FBA2 /* Plot3d-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Plot3d-dummy.m"; sourceTree = "<group>"; };
+		652F9CC4DD3DEA659DF95A1D50FA888F /* Pods-CompGraphics_task1-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CompGraphics_task1-frameworks.sh"; sourceTree = "<group>"; };
+		694BC311ECF261CF424E36412DBE1187 /* Plot3d */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Plot3d; path = Plot3d.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C7ABC9D966B814006E6D574D1302556 /* Plot3d-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Plot3d-prefix.pch"; sourceTree = "<group>"; };
+		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		78BEBE3DA63F25144CE760254030D0E7 /* Plot3D.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Plot3D.h; path = Plot3D/Plot3D.h; sourceTree = "<group>"; };
+		7B362ED0179AD07CDBFF2F92FC1ADB9A /* Pods-CompGraphics_task1-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CompGraphics_task1-umbrella.h"; sourceTree = "<group>"; };
+		7BA375EC26AE92BB2B3514B412E34AA7 /* PlotPoint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PlotPoint.swift; path = Plot3D/PlotPoint.swift; sourceTree = "<group>"; };
+		99A89104614C60F17CCC2BA4F6ED3BD7 /* Pods-CompGraphics_task1-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CompGraphics_task1-acknowledgements.plist"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A0EB76F84B5F0BB6EF443323C9F01C5B /* Pods-CompGraphics_task1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CompGraphics_task1.debug.xcconfig"; sourceTree = "<group>"; };
+		A8C77BD9E811DC5FA80E8DAEBD95B647 /* Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Plot3D/Extensions.swift; sourceTree = "<group>"; };
+		BEC73C4BB81AD3B900AA58CC38A49CF0 /* Plot3d-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Plot3d-Info.plist"; sourceTree = "<group>"; };
+		C182FED9C03A37F7A8CE95B770BED7A1 /* PlotConnection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PlotConnection.swift; path = Plot3D/PlotConnection.swift; sourceTree = "<group>"; };
+		C660FB740AD0AB7325D5BB58AB3C3B2E /* PlotConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PlotConfiguration.swift; path = Plot3D/PlotConfiguration.swift; sourceTree = "<group>"; };
+		CA269FE86025E812E1011522F442FCB0 /* Pods-CompGraphics_task1 */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-CompGraphics_task1"; path = Pods_CompGraphics_task1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D209AC118321DBBE858317F32680F71B /* PlotAxis.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PlotAxis.swift; path = Plot3D/PlotAxis.swift; sourceTree = "<group>"; };
+		D2540DA7CB4E2834F13B570F2ADE97D3 /* Plot3d.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Plot3d.release.xcconfig; sourceTree = "<group>"; };
+		E20C0396ECB1E37165E8C04B135320EF /* PlotText.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PlotText.swift; path = Plot3D/PlotText.swift; sourceTree = "<group>"; };
+		E6DEC26F7760CDED2D8C8C12A0284DD5 /* Pods-CompGraphics_task1-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CompGraphics_task1-acknowledgements.markdown"; sourceTree = "<group>"; };
+		F0A58D00CC5BBA15738ADE5959BAEF5C /* Plot3d.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Plot3d.debug.xcconfig; sourceTree = "<group>"; };
+		F48F56BE82F39A0051C8ABE4A1C766CB /* Plot3d-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Plot3d-umbrella.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		51502402E1284C0F82A2B64DA11C6FE6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85F22619EC7AFF2A9BE39830B8CFAA47 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AFDA3F3DB0D5E732DD2956A466331169 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D04868E9E7600578EF0E4C04EED3E1A9 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		26A4EED16889CCE0C4BDE6AACC4C5A87 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				05A7EE00931A20E8169A05F0AAC095C2 /* Plot3d.modulemap */,
+				5ACF6D8D909192DDA34EBEB536D8FBA2 /* Plot3d-dummy.m */,
+				BEC73C4BB81AD3B900AA58CC38A49CF0 /* Plot3d-Info.plist */,
+				6C7ABC9D966B814006E6D574D1302556 /* Plot3d-prefix.pch */,
+				F48F56BE82F39A0051C8ABE4A1C766CB /* Plot3d-umbrella.h */,
+				F0A58D00CC5BBA15738ADE5959BAEF5C /* Plot3d.debug.xcconfig */,
+				D2540DA7CB4E2834F13B570F2ADE97D3 /* Plot3d.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Plot3d";
+			sourceTree = "<group>";
+		};
+		41091840D45FF9517AC4DF925D3C3E2D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DF0C9FC400D06A7EFB4DEE7855AAD93C /* Plot3d */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		677E2DBA9C558F2F53302643F1BD1B8E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				694BC311ECF261CF424E36412DBE1187 /* Plot3d */,
+				CA269FE86025E812E1011522F442FCB0 /* Pods-CompGraphics_task1 */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B165E9D9F3525E237896B6B72A6AE815 /* Pods-CompGraphics_task1 */ = {
+			isa = PBXGroup;
+			children = (
+				53F6B9BBA3EB76E9464929E8E0D5FC97 /* Pods-CompGraphics_task1.modulemap */,
+				E6DEC26F7760CDED2D8C8C12A0284DD5 /* Pods-CompGraphics_task1-acknowledgements.markdown */,
+				99A89104614C60F17CCC2BA4F6ED3BD7 /* Pods-CompGraphics_task1-acknowledgements.plist */,
+				4D148A7371106FDEF03CB2CAABBF32E7 /* Pods-CompGraphics_task1-dummy.m */,
+				652F9CC4DD3DEA659DF95A1D50FA888F /* Pods-CompGraphics_task1-frameworks.sh */,
+				34331173421DED24C13147BFA4A88433 /* Pods-CompGraphics_task1-Info.plist */,
+				7B362ED0179AD07CDBFF2F92FC1ADB9A /* Pods-CompGraphics_task1-umbrella.h */,
+				A0EB76F84B5F0BB6EF443323C9F01C5B /* Pods-CompGraphics_task1.debug.xcconfig */,
+				101BFC0985B3E8673AC0D5BD454E7CCF /* Pods-CompGraphics_task1.release.xcconfig */,
+			);
+			name = "Pods-CompGraphics_task1";
+			path = "Target Support Files/Pods-CompGraphics_task1";
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				41091840D45FF9517AC4DF925D3C3E2D /* Pods */,
+				677E2DBA9C558F2F53302643F1BD1B8E /* Products */,
+				EA1B3C155193F84990BCDE2D8C11843C /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				578452D2E740E91742655AC8F1636D1F /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DF0C9FC400D06A7EFB4DEE7855AAD93C /* Plot3d */ = {
+			isa = PBXGroup;
+			children = (
+				A8C77BD9E811DC5FA80E8DAEBD95B647 /* Extensions.swift */,
+				78BEBE3DA63F25144CE760254030D0E7 /* Plot3D.h */,
+				D209AC118321DBBE858317F32680F71B /* PlotAxis.swift */,
+				C660FB740AD0AB7325D5BB58AB3C3B2E /* PlotConfiguration.swift */,
+				C182FED9C03A37F7A8CE95B770BED7A1 /* PlotConnection.swift */,
+				4DAF5773A41CCBB72FED4DCA6837CD63 /* PlotDataSource.swift */,
+				4FEE55FCE8CC7E46938BF66B7338A9F5 /* PlotDelegate.swift */,
+				7BA375EC26AE92BB2B3514B412E34AA7 /* PlotPoint.swift */,
+				2CC85DE5AA4830C4A04B182CE223F4B9 /* PlotPointNode.swift */,
+				287B7A60E837DC61D3D55AF41BDDB2BA /* PlotSpaceNode.swift */,
+				E20C0396ECB1E37165E8C04B135320EF /* PlotText.swift */,
+				44D0BA271154422A63F81C13415A30B6 /* PlotView.swift */,
+				26A4EED16889CCE0C4BDE6AACC4C5A87 /* Support Files */,
+			);
+			name = Plot3d;
+			path = Plot3d;
+			sourceTree = "<group>";
+		};
+		EA1B3C155193F84990BCDE2D8C11843C /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				B165E9D9F3525E237896B6B72A6AE815 /* Pods-CompGraphics_task1 */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		11F234C099032B0BF624D73AE0FB11F9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				194F2FA1483A97FA04093F52936BB25C /* Plot3D.h in Headers */,
+				BBB3B877C92A85D5A3311BC1D4AC2398 /* Plot3d-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EACD8A7FFCC0E1F426E2FBBC10A1FD40 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33172C25C8301F963BF1BFB6203A8CCB /* Pods-CompGraphics_task1-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		7E8021B01E2A2F28BC768AD45414E79E /* Pods-CompGraphics_task1 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F9966D5A2B01EA98B207B39E5197C582 /* Build configuration list for PBXNativeTarget "Pods-CompGraphics_task1" */;
+			buildPhases = (
+				EACD8A7FFCC0E1F426E2FBBC10A1FD40 /* Headers */,
+				80AB0A2D8093E8BFD4B05AC80FEF62AC /* Sources */,
+				AFDA3F3DB0D5E732DD2956A466331169 /* Frameworks */,
+				346B411D74A8C6DE616D33C5AE3C1626 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C3E378E723C246A6A92FD05A6AB41FDB /* PBXTargetDependency */,
+			);
+			name = "Pods-CompGraphics_task1";
+			productName = Pods_CompGraphics_task1;
+			productReference = CA269FE86025E812E1011522F442FCB0 /* Pods-CompGraphics_task1 */;
+			productType = "com.apple.product-type.framework";
+		};
+		A0C26DDA545428B04B4066FD2C4E8EA4 /* Plot3d */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7E7C626CD2683D04A3B40329EE4C04E7 /* Build configuration list for PBXNativeTarget "Plot3d" */;
+			buildPhases = (
+				11F234C099032B0BF624D73AE0FB11F9 /* Headers */,
+				86BC0E7941F37428EDC70EA84A932B34 /* Sources */,
+				51502402E1284C0F82A2B64DA11C6FE6 /* Frameworks */,
+				F38C3A9388B5C4AD09319405E10E26E7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Plot3d;
+			productName = Plot3d;
+			productReference = 694BC311ECF261CF424E36412DBE1187 /* Plot3d */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 677E2DBA9C558F2F53302643F1BD1B8E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A0C26DDA545428B04B4066FD2C4E8EA4 /* Plot3d */,
+				7E8021B01E2A2F28BC768AD45414E79E /* Pods-CompGraphics_task1 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		346B411D74A8C6DE616D33C5AE3C1626 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F38C3A9388B5C4AD09319405E10E26E7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		80AB0A2D8093E8BFD4B05AC80FEF62AC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01AE9B3E9B1843F9583ADB0F64270A41 /* Pods-CompGraphics_task1-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86BC0E7941F37428EDC70EA84A932B34 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A491A718C6B0F7FD3FAEC61E139CC277 /* Extensions.swift in Sources */,
+				BD80CFAA37E3A760425BA190BE62EB8F /* Plot3d-dummy.m in Sources */,
+				ECB8A84DAE99E89EB88D585795736711 /* PlotAxis.swift in Sources */,
+				226C1F634A9C032C0F6F104503EA6677 /* PlotConfiguration.swift in Sources */,
+				BE2F66C00AAFCF933475C58F5CAE567D /* PlotConnection.swift in Sources */,
+				358C3DEE81EA184CF3798DF2C93FEE13 /* PlotDataSource.swift in Sources */,
+				2BE59B5D7BAD297882495B95D1E87814 /* PlotDelegate.swift in Sources */,
+				8F636C506083763C572638031E85E11A /* PlotPoint.swift in Sources */,
+				DA98070D408C5C101F52F08E1872D8FD /* PlotPointNode.swift in Sources */,
+				DC2944BD84DE7F11086FE6FA58225A7C /* PlotSpaceNode.swift in Sources */,
+				FECD107BA276FB5A187B2F228E78367B /* PlotText.swift in Sources */,
+				1931B36C40E3CD828A6588D85BB1AE68 /* PlotView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C3E378E723C246A6A92FD05A6AB41FDB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Plot3d;
+			target = A0C26DDA545428B04B4066FD2C4E8EA4 /* Plot3d */;
+			targetProxy = 3CF7104A022D1C3ED82673050F43835E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		09909ECBA13E8F70A928465E7F7A9A92 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		0F0A1A66ACAB27ACD55D4641DA8C2D22 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F0A58D00CC5BBA15738ADE5959BAEF5C /* Plot3d.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Plot3d/Plot3d-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Plot3d/Plot3d-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Plot3d/Plot3d.modulemap";
+				PRODUCT_MODULE_NAME = Plot3d;
+				PRODUCT_NAME = Plot3d;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		2DE0D8898245310716431F92FA4989FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		2FBCEB8D8E0C6FE3D403E91208357C8D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 101BFC0985B3E8673AC0D5BD454E7CCF /* Pods-CompGraphics_task1.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-CompGraphics_task1/Pods-CompGraphics_task1-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CompGraphics_task1/Pods-CompGraphics_task1.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		679562D85EE93D360C79A64C6F0F6620 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A0EB76F84B5F0BB6EF443323C9F01C5B /* Pods-CompGraphics_task1.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-CompGraphics_task1/Pods-CompGraphics_task1-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CompGraphics_task1/Pods-CompGraphics_task1.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		FAD160378FFF33CDC61E0C1B83964201 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D2540DA7CB4E2834F13B570F2ADE97D3 /* Plot3d.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Plot3d/Plot3d-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Plot3d/Plot3d-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Plot3d/Plot3d.modulemap";
+				PRODUCT_MODULE_NAME = Plot3d;
+				PRODUCT_NAME = Plot3d;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				09909ECBA13E8F70A928465E7F7A9A92 /* Debug */,
+				2DE0D8898245310716431F92FA4989FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7E7C626CD2683D04A3B40329EE4C04E7 /* Build configuration list for PBXNativeTarget "Plot3d" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0F0A1A66ACAB27ACD55D4641DA8C2D22 /* Debug */,
+				FAD160378FFF33CDC61E0C1B83964201 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F9966D5A2B01EA98B207B39E5197C582 /* Build configuration list for PBXNativeTarget "Pods-CompGraphics_task1" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				679562D85EE93D360C79A64C6F0F6620 /* Debug */,
+				2FBCEB8D8E0C6FE3D403E91208357C8D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

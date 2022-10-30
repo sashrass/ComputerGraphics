@@ -1,0 +1,6 @@
+framework module Plot3d {
+  umbrella header "Plot3d-umbrella.h"
+
+  export *
+  module * { export * }
+}
